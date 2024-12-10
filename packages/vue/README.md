@@ -1,7 +1,7 @@
 <h2 align="center">Headless UI Float Vue</h2>
 
 <p align="center">
-  Easily use <a href="https://headlessui.dev/">Headless UI</a> for Vue 3 with <a href="https://floating-ui.com/">Floating UI</a> (New version Popper.js) to position floating elements.
+  Easily use <a href="https://headlessui.com/">Headless UI</a> for Vue 3 with <a href="https://floating-ui.com/">Floating UI</a> (New version Popper.js) to position floating elements.
 </p>
 
 <p align="center">
@@ -11,6 +11,9 @@
 </p>
 
 <hr>
+
+> [!NOTE]
+> [Headless UI](https://headlessui.com/) has [released version 2.0](https://tailwindcss.com/blog/headless-ui-v2#built-in-anchor-positioning) (currently for React only), which builds in anchor positioning with Floating UI. Therefore, this package will be unnecessary when Headless UI v2 supports Vue.
 
 ## Features
 
@@ -45,9 +48,10 @@ If you think this package has helped you, please consider [Becoming a sponsor](h
 
 ## Credits
 
-* [Headless UI](https://headlessui.dev/)
+* [Headless UI](https://headlessui.com/)
 * [Floating UI](https://floating-ui.com/)
 * This package is inspired by the [headlessui#154 example](https://github.com/tailwindlabs/headlessui/issues/154)
 
 ## License
+
 Under the [MIT LICENSE](LICENSE.md)
