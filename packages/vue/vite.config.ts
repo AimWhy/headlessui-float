@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 
@@ -10,18 +10,15 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs'],
-      fileName: format => {
-        if (format === 'cjs') {
-          return 'headlessui-float.cjs'
-        }
-        return 'headlessui-float.mjs'
-      },
+      fileName: format => format === 'cjs' ? 'headlessui-float.cjs' : 'headlessui-float.mjs',
     },
     rollupOptions: {
       external: [
         'vue',
+        '@headlessui/vue',
         '@floating-ui/core',
         '@floating-ui/dom',
+        '@floating-ui/vue',
       ],
     },
   },

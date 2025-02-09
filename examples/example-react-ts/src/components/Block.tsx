@@ -2,19 +2,20 @@ import type { ReactElement } from 'react'
 
 interface BlockProps {
   title: string
-  titleClass: string
-  children: ReactElement
+  contentClass: string
+  children: ReactElement | ReactElement[]
+  form?: ReactElement
+  'data-testid'?: string
 }
 
 export default function Block(props: BlockProps) {
-  const { title, titleClass = '' } = props
-
   return (
-    <div className="relative h-[240px] flex justify-center items-center border-2 border-dashed border-indigo-100 rounded-lg">
-      <h2 className={`absolute top-3 left-4 font-bold tracking-wider ${titleClass}`}>
-        {title}
-      </h2>
-      {props.children}
+    <div className="relative max-w-screen-md">
+      <h2 className="font-bold tracking-wider mb-4">{props.title}</h2>
+      <div className={props.contentClass || ''} data-testid={props['data-testid'] || ''}>
+        {props.children}
+      </div>
+      {props.form}
     </div>
   )
 }

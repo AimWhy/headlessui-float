@@ -1,5 +1,6 @@
 {
   "name": "headlessui-float",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
   "description": "Easily use Headless UI components with Floating UI (Popper.js)",
@@ -9,28 +10,37 @@
     "examples/*"
   ],
   "scripts": {
-    "build": "npm-run-all -p build:*",
+    "build": "run-s build:*",
     "build:react": "yarn react build",
     "build:vue": "yarn vue build",
-    "watch": "npm-run-all -p watch:*",
+    "build:nuxt": "yarn nuxt build",
+    "watch": "run-p watch:*",
     "watch:react": "yarn react watch",
     "watch:vue": "yarn vue watch",
-    "watch:example": "npm-run-all -p watch:example:*",
+    "watch:example": "run-p watch:example:*",
     "watch:example:react": "yarn react:example dev --port=3011",
     "watch:example:react-ts": "yarn react-ts:example dev --port=3012",
     "watch:example:vue": "yarn vue:example dev --port=3013",
     "watch:example:vue-ts": "yarn vue-ts:example dev --port=3014",
+    "test": "run-s test:unit test:functional",
+    "test:unit": "run-s test:unit:*",
+    "test:unit:react": "yarn react test:unit --run",
+    "test:unit:vue": "yarn vue test:unit --run",
+    "test:functional": "run-s test:functional:*",
+    "test:functional:react": "yarn react test:functional",
+    "test:functional:vue": "yarn vue test:functional",
     "react": "yarn workspace @headlessui-float/react",
     "react:example": "yarn workspace headlessui-float-example-react",
     "react-ts:example": "yarn workspace headlessui-float-example-react-ts",
     "vue": "yarn workspace @headlessui-float/vue",
     "vue:example": "yarn workspace headlessui-float-example-vue",
     "vue-ts:example": "yarn workspace headlessui-float-example-vue-ts",
+    "nuxt": "yarn workspace @headlessui-float/nuxt",
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@ycs77/eslint-config": "^0.1.3",
-    "eslint": "^8.20.0",
-    "npm-run-all": "^4.1.5"
+    "@ycs77/eslint-config": "^3.1.2",
+    "eslint": "^9.15.0",
+    "npm-run-all2": "^7.0.2"
   }
 }
